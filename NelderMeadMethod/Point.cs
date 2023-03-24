@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 
-
 namespace NelderMeadMethod;
 
 public class Point : IEnumerable<double>, ICloneable
@@ -62,6 +61,4 @@ public class Point : IEnumerable<double>, ICloneable
     public object Clone() => new Point(_coordinates);
 
     public override string ToString() => $"({string.Join(", ", _coordinates)})";
-
-    
 }
