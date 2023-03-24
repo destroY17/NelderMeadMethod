@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NelderMeadMethod", "NelderMeadMethod\NelderMeadMethod.csproj", "{768C54D5-3E58-4E61-A8F4-9C8B3C08703C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NelderMeadTest", "NelderMeadTest\NelderMeadTest\NelderMeadTest.csproj", "{8EEBDD5F-A801-4579-A204-B9A453FBA60B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{768C54D5-3E58-4E61-A8F4-9C8B3C08703C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{768C54D5-3E58-4E61-A8F4-9C8B3C08703C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{768C54D5-3E58-4E61-A8F4-9C8B3C08703C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{768C54D5-3E58-4E61-A8F4-9C8B3C08703C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EEBDD5F-A801-4579-A204-B9A453FBA60B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EEBDD5F-A801-4579-A204-B9A453FBA60B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EEBDD5F-A801-4579-A204-B9A453FBA60B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EEBDD5F-A801-4579-A204-B9A453FBA60B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0FFFABCF-03B9-40EE-9566-CC7E91D937DE}
+	EndGlobalSection
+EndGlobal
