@@ -18,7 +18,8 @@ public class NelderMead
         _expansion = expansion;
     }
 
-    public Point Run(IFunction function, Point? initialPoint = null, int maxIteration = 100, double accuracy = 0.001)
+    public Point Run(IFunction function, Point? initialPoint = null, int maxIteration = 100, 
+        double accuracy = 0.001, bool isConsoleDraw = false)
     {
         if (function is null) throw new ArgumentNullException("Function can't be null");
 
@@ -30,6 +31,7 @@ public class NelderMead
 
         while (iterationCount < maxIteration && !AccuraccyIsReached(simplex, accuracy))
         {
+            iterationCount++;
             simplex.Sort(new PointComparator(function));
 
             Point bestPoint = simplex[0];
@@ -40,6 +42,12 @@ public class NelderMead
 
             Point worstPoint = simplex[^1];
             double worstValue = function.Calculate(worstPoint);
+
+            if (isConsoleDraw)
+                Console.WriteLine($"{iterationCount} итерация:\n" +
+                    $"Лучшая точка: {bestPoint}, Значение функции: {bestValue}\n" +
+                    $"Хорошая точка: {goodPoint}, Значение функции: {goodValue}\n" +
+                    $"Худшая точка: {worstPoint}, Значение функции: {worstValue}\n");
 
             var centroid = GetCentroid(simplex, worstPoint);
 
@@ -76,12 +84,9 @@ public class NelderMead
                 simplex[^1] = shrinkedPoint;
             else
                 GlobalCompression(simplex, bestPoint);
-
-            iterationCount++;
         }
         return simplex[0];
     }
-
 
     private List<Point> CreateSimplex(int dimension, Point? initialPoint)
     {
@@ -90,8 +95,8 @@ public class NelderMead
         var simplex = new List<Point>(initialPoint.Dimension + 1);
         simplex.Add(initialPoint);
 
-        double offset1 = 0.05;
-        double offset2 = 0.00025;
+        double offset1 = _random.NextDouble();
+        double offset2 = offset1 * _random.NextDouble();
 
         Point prevPoint = initialPoint;
 
