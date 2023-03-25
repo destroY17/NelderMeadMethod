@@ -8,8 +8,7 @@ public class TestAlgorithm
     private NelderMead _algorithm = new NelderMead();
     private IFunction _rosenbrock = new RosenbrockFunction();
     private IFunction _himmelblaus = new HimmelblausFunction();
-    private IFunction _sinFunc = new SinFunction();
-
+    
     [TestMethod]
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void IncorrectCoefficients() => new NelderMead(-5);
@@ -53,9 +52,10 @@ public class TestAlgorithm
     [TestMethod]
     public void FindLocalOptimum()
     {
+        var sinFunc = new SinFunction();
         var initialPoint = new Point(new double[] { 3 });
-        var answer = _sinFunc.Calculate(_algorithm.Run(_sinFunc, initialPoint));
-        var expected = _sinFunc.Calculate(new Point(new double[] { 2.1355 }));
+        var answer = sinFunc.Calculate(_algorithm.Run(sinFunc, initialPoint));
+        var expected = sinFunc.Calculate(new Point(new double[] { 2.1355 }));
 
         Assert.IsTrue((answer - expected) < 0.001);
     }
